@@ -32,7 +32,7 @@ const LatestReportsSection = () => {
     const reports = useMemo(
         () =>
             [...(data ?? [])]
-                .filter((r) => r.status === "VERIFIED" || r.status === "RESOLVED")
+                .filter((r) => r.status === "VERIFIED" || r.status === "RESOLVED" || r.status === "REJECTED")
                 .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
                 .slice(0, 6),
         [data],
