@@ -33,7 +33,7 @@ const Masuk = () => {
         try {
             const response = await authAPI.login({ email, password });
             parseAuthResponse(response);
-            toast({
+            toast({ 
                 title: "Success",
                 description: "Berhasil masuk!",
             });
@@ -66,7 +66,7 @@ const Masuk = () => {
                 {/* Logo */}
                 <div className="flex items-center gap-2 mb-8">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                        <img src="/icon.png" alt="SentraWarga Icon" className="w-7 h-7" />
+                        <img src="/icon.png" alt="SentraWarga Icon" className="w-6 h-7" />
                     </div>
                     <span className="font-bold text-xl text-foreground">SentraWarga</span>
                 </div>
