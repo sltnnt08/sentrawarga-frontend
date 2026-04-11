@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 80 40% 97%;
+    --foreground: 150 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 20% 15%;
+
+    --primary: 145 63% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --primary-light: 145 50% 92%;
+    --primary-glow: 130 60% 42%;
+
+    --secondary: 80 30% 94%;
+    --secondary-foreground: 150 20% 15%;
+
+    --muted: 80 20% 94%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 45 80% 55%;
+    --accent-foreground: 150 20% 15%;
+
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 20% 88%;
+    --input: 145 20% 88%;
+    --ring: 145 63% 32%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 145 63% 32%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 145 30% 95%;
+    --sidebar-accent-foreground: 150 20% 15%;
+    --sidebar-border: 145 20% 88%;
+    --sidebar-ring: 145 63% 32%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(80 40% 97%) 0%, hsl(145 40% 94%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(145 63% 32%), hsl(130 60% 42%));
+    --shadow-card: 0 4px 24px -4px hsl(145 30% 30% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(145 30% 30% / 0.15);
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 80 20% 94%;
+    --card: 150 20% 12%;
+    --card-foreground: 80 20% 94%;
+    --popover: 150 20% 12%;
+    --popover-foreground: 80 20% 94%;
+    --primary: 145 55% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 145 30% 18%;
+    --primary-glow: 130 50% 55%;
+    --secondary: 150 15% 16%;
+    --secondary-foreground: 80 20% 94%;
+    --muted: 150 15% 16%;
+    --muted-foreground: 80 10% 60%;
+    --accent: 45 70% 50%;
+    --accent-foreground: 80 20% 94%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 145 55% 45%;
+    --sidebar-background: 150 20% 10%;
+    --sidebar-foreground: 80 20% 90%;
+    --sidebar-primary: 145 55% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 15% 16%;
+    --sidebar-accent-foreground: 80 20% 90%;
+    --sidebar-border: 150 15% 20%;
+    --sidebar-ring: 145 55% 45%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(150 20% 8%) 0%, hsl(150 20% 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(145 55% 45%), hsl(130 50% 55%));
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /* Hide browser-native password reveal buttons to avoid duplicate eye icons. */
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
+
+  input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.7) hsl(var(--muted) / 0.45);
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.45);
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.9), hsl(var(--primary-glow) / 0.85));
+    border: 2px solid hsl(var(--background));
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary) / 1), hsl(var(--primary-glow) / 1));
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: hsl(var(--muted) / 0.45);
+  }
+}
+
+@layer components {
+  .leaflet-container {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .leaflet-popup-content-wrapper,
+  .leaflet-popup-tip {
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .leaflet-popup-content {
+    color: hsl(var(--popover-foreground));
+  }
+
+  .leaflet-control-zoom a {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-color: hsl(var(--border));
+  }
+
+  .leaflet-control-zoom a:hover {
+    background-color: hsl(var(--muted));
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
